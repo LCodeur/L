@@ -1,0 +1,96 @@
+body
+{
+    font-family: cursive;
+     margin:auto;
+    background-position: center;   
+}
+.login
+{
+    width: 400px;
+    height: 500px;
+    background-color: blue;
+    margin:80PX auto;
+    box-shadow: 12PX 12PX 12PX BLACK;
+    border-radius: 25px;
+    opacity:0.8;
+}
+
+form input[type="text"],input[type="password"]
+{
+    border: none;
+    background: transparent;
+    border-bottom: 1PX solid #fff;
+    outline: none;
+    color: aliceblue;
+    font-size: 15PX;
+    font-family: sans-serif;border-bottom-style: inherit;  
+}
+label
+{
+    text-decoration-color: #fff;
+}
+#bott
+{
+    margin-top: 25PX;
+    position: relative;
+    width: 280PX;
+    height: 80px;
+    margin-left: 5PX;
+    background-color: white;
+    border-radius: 20PX ;
+    font-family: cursive;
+    font-weight: bold;
+    font-size: 20PX;  
+}
+#bott:hover
+{
+    background-color: burlywood;
+    font-size: 18px;
+    font-family: cursive;
+}
+#lab
+{
+    color:#fff;
+    font-size: 20px;
+}
+h1
+{
+    color: aliceblue;
+    text-align: center;
+    font-size: 30px;
+   padding-top: 35px;
+}
+small
+{
+    color: aliceblue;
+    text-align: center;
+    font-size: 12PX;
+    float: left;
+    margin-left: 20PX;
+    margin-top: 10PX;
+}
+small:hover
+{
+    color: crimson;
+}
+form
+{
+    font-size: 30px;
+    padding:  55PX ;
+    padding-top: 0px;
+}
+input
+{
+    border-style: none;
+    border:12 solid black;
+    width: 290PX;
+    height: 40PX;
+    font-style: italic;
+    font-size: 15PX
+}
+p
+{
+    color: aliceblue;
+    font-size: 15PX;
+    color: red;
+}

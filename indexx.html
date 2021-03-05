@@ -1,0 +1,66 @@
+<html>
+<head>
+    <title>LOGin.L!!</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div>
+   
+    </div>
+    <div class="login">
+    <h1>login here</h1>
+    <form method="post" action="">
+        <label for="name" id="lab">username</label><br>
+        <input type="text" placeholder="Entrer username" id="name" name="nom"><br>
+        <p><?php echo $nameerr;?></p>
+        <label for="password" id="lab">password</label><br>
+        <input type="password" placeholder="Entrer password" id="password" name="passwords"><br>
+        <p><?php echo $passworderr;?></p><input type="submit" value="login" id="bott" name="submit">
+        
+        <a href=""><small><pre>lost your password
+D'ont have an account?</pre></small></a>
+    </form>
+    
+    
+    
+    </div>
+</body>
+</html>
+    <?php
+$name = $password =$pass="";
+$nameerr = $passworderr="";
+
+if($_SERVER["REQUEST_METHOD"]=="POST"){
+$name = verifyinput($_POST['nom']);
+$password = verifyinput($_POST['passwords']);
+   
+    if(empty($name)){$nameerr ="veillez saisir le nom";}
+    if(empty($password)){$passworderr ="veillez saisir le mot de passe";}
+}
+function verifyinput($var){
+    $var=trim($var);
+    $var=stripslashes($var);
+    $var=htmlspecialchars($var);
+    return $var;
+}
+if(!empty($name) && !empty($password))
+{
+    try{
+$db=new PDO('mysql:host=localhost;dbname=loginsystem','root','');
+$sql="SELECT * FROM loginsystem WHERE name = $name";
+$result=$db->prepare($sql);
+$result->execute();
+$pass = password_hash($pass,PASSWORD_DEFAULT);
+$sql = "INSERT INTO user (name,password) VALUES ('$name','$password')";
+$req=$db->prepare($sql);
+    $req->execute();
+       
+    }catch(PDOException $e)
+    {
+        die($e->getMessage());
+    }
+}
+?>
+
